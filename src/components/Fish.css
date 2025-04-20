@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+/* Fish wrapper - controls scale */
+.fish-wrapper {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  /* Position fish with a wider vertical range */
+  top: -80px; /* Base position - will be overridden by individual fish styles */
+  z-index: 3; /* Position between plant layers */
+}
+
+/* Main fish container - controls animation */
+.fish {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Remove the default animation here - it will be applied via inline styles */
+}
+
+/* The main body of the fish - a rounded rectangle */
+.fish-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #FF6B6B; /* Fish color - will be overridden by inline styles */
+  border-radius: 20px; /* Controls how rounded the body is */
+  position: relative;
+}
+
+/* The eye of the fish - a simple black circle */
+.eye {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%; /* Makes it a perfect circle */
+  top: 50%;
+  left: 15%; /* Position from the left edge of the body */
+  transform: translateY(-50%); /* Centers vertically */
+}
+
+/* The dorsal fin - completely redesigned using a simpler approach */
+.dorsal-fin {
+  position: absolute;
+  width: 16px; /* Width of the base of the triangle */
+  height: 20px; /* Height of the triangle */
+  background-color: #FF6B6B; /* Same color as the body - will be overridden by inline styles */
+  top: -15px; /* Position above the body */
+  left: 50%;
+  transform: translateX(-50%); /* Centers horizontally */
+  clip-path: polygon(100% 0, 100% 100%, 0 100%); /* Creates a triangle pointing upward */
+  border-radius: 2px; /* Slightly rounds the corners */
+}
+
+/* The tail - also created using CSS triangles */
+.tail {
+  position: absolute;
+  /* CSS triangle technique for the tail:
+     - Set width and height to 0
+     - Use transparent borders on top and bottom
+     - Use a colored border on the right to create the triangle pointing left */
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent; /* Top of triangle */
+  border-bottom: 15px solid transparent; /* Bottom of triangle */
+  border-right: 25px solid #FF6B6B; /* Right side of triangle - this creates the point */
+  right: -20px; /* Position to the right of the body */
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
+  border-radius: 5px; /* Slightly rounds the corners */
+  
+  /* Clip-path creates a more rounded triangle shape
+     The polygon points are: top-right, bottom-left, bottom-right, back to top-right */
+  clip-path: polygon(100% 0, 0 50%, 100% 100%, 100% 0);
+  
+  /* Tail wagging animation */
+  animation: tailWag 1s ease-in-out infinite;
+  
+  /* To modify the tail shape:
+     1. Change border-top/bottom values to make it taller/shorter
+     2. Change border-right value to make it longer/shorter
+     3. Adjust clip-path points to change the overall shape
+     4. Change right value to position it further/closer to the body */
+}
+
+/* Vertical stripes for the striped fish (zebra-like) */
+.stripe {
+  position: absolute;
+  width: 8px; /* Width of the vertical stripe */
+  height: 100%; /* Full height of the fish body */
+  background-color: #FFFFFF; /* White stripes */
+  top: 0;
+}
+
+.stripe-1 {
+  left: 25%;
+}
+
+.stripe-2 {
+  left: 45%;
+}
+
+.stripe-3 {
+  left: 65%;
+}
+
+/* Animation for the fish swimming across the screen */
+@keyframes swim {
+  0% {
+    transform: translateX(-500px) scaleX(-1); /* Start much further off-screen to the left, facing right */
+    opacity: 0; /* Start invisible */
+  }
+  5% {
+    opacity: 1; /* Fade in quickly */
+  }
+  49% {
+    transform: translateX(calc(100vw + 500px)) scaleX(-1); /* Swim to the right edge */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(100vw + 500px)) scaleX(1); /* Flip to face left */
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(-500px) scaleX(1); /* Swim back to the left edge */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500px) scaleX(-1); /* Flip to face right again */
+    opacity: 0; /* Fade out at the end */
+  }
+}
+
+/* Animation for fish swimming from right to left */
+@keyframes swimReverse {
+  0% {
+    transform: translateX(calc(100vw + 500px)) scaleX(1); /* Start much further off-screen to the right, facing left */
+    opacity: 0; /* Start invisible */
+  }
+  5% {
+    opacity: 1; /* Fade in quickly */
+  }
+  49% {
+    transform: translateX(-500px) scaleX(1); /* Swim to the left edge */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-500px) scaleX(-1); /* Flip to face right */
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(calc(100vw + 500px)) scaleX(-1); /* Swim back to the right edge */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 500px)) scaleX(1); /* Flip to face left again */
+    opacity: 0; /* Fade out at the end */
+  }
+}
+
+/* Animation for the title - no flipping */
+@keyframes titleMove {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  49% {
+    transform: translateX(calc(100vw + 500px));
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(100vw + 500px));
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(-500px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+}
+
+/* Animation for the title moving right to left - no flipping */
+@keyframes titleMoveReverse {
+  0% {
+    transform: translateX(calc(100vw + 500px));
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  49% {
+    transform: translateX(-500px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-500px);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(calc(100vw + 500px));
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 500px));
+    opacity: 0;
+  }
+}
+
+/* Animation for the tail wagging */
+@keyframes tailWag {
+  0%, 100% {
+    transform: translateY(-50%) rotate(0deg); /* Normal position */
+  }
+  50% {
+    transform: translateY(-50%) rotate(15deg); /* Wag to the right */
+  }
+}
+
+.fish-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+.fish-title {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+} 

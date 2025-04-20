@@ -1,0 +1,88 @@
+.sign {
+  position: absolute;
+  right: 220px;
+  bottom: 20px;
+  z-index: 2;
+  transform: rotate(8deg);
+}
+
+.sign-post {
+  width: 30px;
+  height: 435px;
+  background: linear-gradient(
+    to bottom,
+    #8B4513 0%,
+    #8B4513 85%,
+    rgb(233, 206, 166) 100%
+  );
+  position: relative;
+}
+
+.sign-arrow {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.sign-arrow::after {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid;
+}
+
+.sign-arrow-1 {
+  top: 20px;
+  left: -75px;
+  background-color: #7ca35f;
+  transform: rotate(0deg);
+}
+
+.sign-arrow-1::after {
+  border-left-color: #7ca35f;
+}
+
+.sign-arrow-2 {
+  top: 90px;
+  left: -75px;
+  background-color: #dbd56a;
+  transform: rotate(-5deg);
+}
+
+.sign-arrow-2::after {
+  right: auto;
+  left: -25px;
+  border-left: none;
+  border-right: 25px solid #dbd56a;
+}
+
+.sign-arrow-3 {
+  top: 160px;
+  left: -75px;
+  background-color: #b380b7;
+  transform: rotate(5deg);
+}
+
+.sign-arrow-3::after {
+  border-left-color: #b380b7;
+}
+
+.sign-arrow:hover {
+  transform: scale(1.05);
+}
+
+.arrow-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+} 
