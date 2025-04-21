@@ -14,10 +14,33 @@ const CorkBoard = ({ onBackClick }) => {
             color="#FF69B4" 
             projectName="Shark Tracker"
             text="Visualization of Great White Sharks off the coast of Guadalupe Island." 
-            top="40%" 
+            top="20%" 
             left="10%" 
             rotation={5}
-            badgeTypes={['PYTHON', 'MATPLOTLIB', 'PANDAS']}
+            badgeTypes={['REACT', 'OPENLAYERS', 'PANDAS', 'MATPLOTLIB', 'DATA_VISUALIZATION']}
+            linkTo="/shark-tracker"
+          />
+
+          <StickyNote 
+            color="#44bf11" 
+            projectName="USNews Top College Predictor"
+            text="Prediction of top college trends over the near and far future using machine learning principles." 
+            top="10%" 
+            left="40%" 
+            rotation={-3}
+            badgeTypes={[]}
+            linkTo="/"
+          />
+
+          <StickyNote 
+            color="#ff830f" 
+            projectName="SoccerNet Action Spotting"
+            text="Classification of unique soccer actions through 3d CNNs trained on labeled video data."
+            top="60%" 
+            left="70%" 
+            rotation={3}
+            badgeTypes={[]}
+            externalLink="https://github.com/yalisommer/sn-spotting-cv-final-darpli"
           />
           <div className="cork-texture"></div>
         </div>

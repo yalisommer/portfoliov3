@@ -1,0 +1,70 @@
+/* Shark Tracker Page Styles */
+body.shark-tracker-bg {
+  background-color: rgba(26, 26, 26, 0.8);
+}
+
+.shark-tracker {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.shark-tracker h1 {
+  color: #646cff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.shark-tracker p {
+  color: #a9adff;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.map-container {
+  width: 100%;
+  height: 600px;
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Back button positioning for shark tracker */
+.shark-tracker .back-button {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(100, 108, 255, 0.5);
+  color: #a9adff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shark-tracker .back-button:hover {
+  background: rgba(100, 108, 255, 0.2);
+  border-color: rgba(100, 108, 255, 0.8);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}

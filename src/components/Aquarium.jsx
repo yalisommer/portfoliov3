@@ -4,7 +4,7 @@ import Fish from './Fish';
 import SeaPlant from './SeaPlant';
 import Sign from './Sign';
 
-const Aquarium = ({ onAboutClick, onProjectsClick }) => {
+const Aquarium = ({ onAboutClick, onProjectsClick, onSharkTrackerClick }) => {
   return (
     <div className="aquarium-container">
       <div className="retro-lamp"></div>
@@ -14,7 +14,11 @@ const Aquarium = ({ onAboutClick, onProjectsClick }) => {
           <div className="aquarium-background"></div>
           <div className="aquarium-floor">
             <div className="sand"></div>
-            <Sign onAboutClick={onAboutClick} onProjectsClick={onProjectsClick} />
+            <Sign 
+              onAboutClick={onAboutClick} 
+              onProjectsClick={onProjectsClick} 
+              onSharkTrackerClick={onSharkTrackerClick}
+            />
             
             {/* Sea Plants */}
             <SeaPlant height={120} left={2} delay={0.2} bottom={30} color="#2D5A27" />

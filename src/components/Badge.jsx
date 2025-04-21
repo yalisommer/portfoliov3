@@ -30,7 +30,11 @@ export const BADGE_TYPES = {
   // Tools & Frameworks
   GIT: { text: 'Git', color: '#F05032' },
   DOCKER: { text: 'Docker', color: '#2496ED' },
-  AWS: { text: 'AWS', color: '#FF9900' }
+  AWS: { text: 'AWS', color: '#FF9900' },
+  
+  // Map & Visualization
+  OPENLAYERS: { text: 'OpenLayers', color: '#1F6B75' },
+  DATA_VISUALIZATION: { text: 'Data Viz', color: '#6A5ACD' }
 };
 
 const Badge = ({ type, customText, customColor }) => {
