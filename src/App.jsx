@@ -62,8 +62,7 @@ function App() {
           <Aquarium onAboutClick={handleAboutClick} onProjectsClick={handleProjectsClick} />
         </div>
         <div className="page">
-          <Projects />
-          <BackButton onClick={handleBackToCenter} position="left" />
+          <Projects onBackClick={handleBackToCenter} />
         </div>
       </div>
     </div>

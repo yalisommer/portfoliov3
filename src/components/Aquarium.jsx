@@ -90,11 +90,11 @@ const Aquarium = ({ onAboutClick, onProjectsClick }) => {
             {/* Fish - 9 different fish with various species, scales, positions, and directions */}
             <Fish delay={0} speed={25} scale={1.1} species="basic" style={{ top: '-80px' }} direction="left-to-right"/>
             <Fish delay={5} speed={30} scale={1.1} species="pink" style={{ top: '-150px' }} direction="right-to-left" zIndex={1} />
-            <Fish delay={10} speed={35} scale={1.3} species="blue" style={{ top: '-220px' }} direction="left-to-right" zIndex={15} title="LinkedIn" link="https://www.linkedin.com/in/yalisommer/" />
+            <Fish delay={10} speed={42} scale={1.3} species="blue" style={{ top: '-220px' }} direction="left-to-right" zIndex={15} title="LinkedIn" link="https://www.linkedin.com/in/yalisommer/" />
             <Fish delay={15} speed={22} scale={1.0} species="green" style={{ top: '-290px' }} direction="right-to-left" zIndex={15}/>
             <Fish delay={20} speed={27} scale={0.6} species="yellow" style={{ top: '-360px' }} direction="left-to-right" />
             <Fish delay={25} speed={24} scale={1.4} species="purple" style={{ top: '-420px' }} direction="right-to-left" />
-            <Fish delay={30} speed={29} scale={1.4} species="orange" style={{ top: '-480px' }} direction="left-to-right" title="Gmail" link="mailto:yalisommer@gmail.com" />
+            <Fish delay={30} speed={45} scale={1.4} species="orange" style={{ top: '-480px' }} direction="left-to-right" title="Gmail" link="mailto:yalisommer@gmail.com" />
             <Fish delay={35} speed={26} scale={0.8} species="striped" style={{ top: '-200px' }} direction="left-to-right" color="#FFB6C1" />
             <Fish delay={40} speed={23} scale={1.8} species="striped" style={{ top: '-350px' }} direction="right-to-left" color="#B3CDE0" />
             

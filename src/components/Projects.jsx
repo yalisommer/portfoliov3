@@ -1,10 +1,11 @@
 import React from 'react';
 import './Projects.css';
+import CorkBoard from './CorkBoard';
 
-const Projects = () => {
+const Projects = ({ onBackClick }) => {
   return (
     <div className="projects-container">
-      {/* Content will be added later */}
+      <CorkBoard onBackClick={onBackClick} />
     </div>
   );
 };
