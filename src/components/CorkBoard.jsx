@@ -24,7 +24,7 @@ const CorkBoard = ({ onBackClick }) => {
           <StickyNote 
             color="#44bf11" 
             projectName="USNews Top College Predictor"
-            text="Prediction of top college trends over the near and far future using machine learning principles." 
+            text="Prediction of top college trends over the near and far future using ML techniques." 
             top="10%" 
             left="40%" 
             rotation={-3}

@@ -1,10 +1,161 @@
 .about-container {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+  position: relative;
+}
+
+.movie-poster {
+  width: 60%;
+  height: 80%;
+  background: #000000;
+  position: relative;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 6px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-poster::after {
+  display: none;
+}
+
+.text-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15% 0;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-line {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: -0.6em 0;
+  transform-origin: center;
+}
+
+.album-text {
+  font-family: 'Arial Narrow', 'Helvetica Neue Condensed', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  mix-blend-mode: screen;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  filter: brightness(1.1) blur(0.2px);
+  transform-origin: center;
+}
+
+/* Top text group */
+.text-1 { color: #00ffff; font-size: 2.8rem; transform: translateX(-2%) scaleY(0.95); }
+.text-2 { color: #00c8ff; font-size: 3.0rem; transform: translateX(2%) scaleY(0.92); }
+.text-3 { color: #ffd700; font-size: 3.4rem; transform: translateX(-3%) scaleY(0.9); }
+.text-4 { color: #ff8c00; font-size: 3.2rem; transform: translateX(1%) scaleY(0.93); }
+.text-5 { color: #ff4500; font-size: 2.9rem; transform: translateX(-1%) scaleY(0.94); }
+
+/* Bottom text group */
+.text-6 { color: #ff2200; font-size: 3.6rem; transform: translateX(2%) scaleY(0.9); }
+.text-7 { color: #ff0000; font-size: 3.4rem; transform: translateX(-2%) scaleY(0.92); }
+
+/* Enhance the glow effect */
+.text-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  filter: blur(4px);
+  opacity: 0.3;
+}
+
+.tape {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.tape::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+  background-size: 4px 4px;
+  opacity: 0.5;
+}
+
+.tape-top-left {
+  top: calc(50% - 40vh - 25px);
+  left: calc(50% - 30vw - 75px);
+  transform: rotate(-45deg);
+}
+
+.tape-top-right {
+  top: calc(50% - 40vh - 25px);
+  left: calc(50% + 30vw - 75px);
+  transform: rotate(45deg);
+}
+
+.tape-bottom-left {
+  top: calc(50% + 40vh - 25px);
+  left: calc(50% - 30vw - 75px);
+  transform: rotate(45deg);
+}
+
+.tape-bottom-right {
+  top: calc(50% + 40vh - 25px);
+  left: calc(50% + 30vw - 75px);
+  transform: rotate(-45deg);
+}
+
+.poster-title {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 4.2rem;
+  color: #ff3ebf;
+  letter-spacing: 0.01em;
+  z-index: 3;
+  text-shadow: none;
+  user-select: none;
+}
+
+/* Tape styles are now unused and can be removed if desired */
+
+/* Optionally, you can comment out or remove the tape styles if not needed */
+
+/* End of About.css */ 
