@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Fish.css';
 
-const Fish = ({ delay = 0, speed = 25, scale = 1, species = 'basic', style = {}, direction = 'left-to-right', color = null, zIndex = null, link = null, title = null }) => {
-  // Determine fish color based on species or use provided color
-  const getFishColor = () => {
-    // If a specific color is provided, use it
-    if (color) {
-      return color;
-    }
-    
-    // Otherwise use the default color based on species
+const Fish = ({ id, delay = 0, speed = 25, scale = 1, species = 'basic', style = {}, direction = 'left-to-right', color = null, zIndex = null, link = null, title = null }) => {
+  const [fishColor, setFishColor] = useState(color || getDefaultColor(species));
+
+  // Determine default fish color based on species
+  function getDefaultColor(species) {
     switch (species) {
       case 'pink':
         return '#FFB6C1'; // Light pink
@@ -28,7 +24,19 @@ const Fish = ({ delay = 0, speed = 25, scale = 1, species = 'basic', style = {},
       default:
         return '#FF6B6B'; // Default coral color
     }
-  };
+  }
+
+  // Listen for color changes from the "I'm Feeling Lucky" button
+  useEffect(() => {
+    const handleColorChange = (e) => {
+      if (e.detail && e.detail.type === 'fish' && e.detail.id === id && e.detail.color) {
+        setFishColor(e.detail.color);
+      }
+    };
+
+    window.addEventListener('aquariumColorChange', handleColorChange);
+    return () => window.removeEventListener('aquariumColorChange', handleColorChange);
+  }, [id]);
 
   // Determine animation based on direction
   const animationStyle = {
@@ -49,18 +57,18 @@ const Fish = ({ delay = 0, speed = 25, scale = 1, species = 'basic', style = {},
     <div 
       className="fish-body" 
       style={{ 
-        backgroundColor: getFishColor(),
-        '--fish-color': getFishColor()
+        backgroundColor: fishColor,
+        '--fish-color': fishColor
       }}
     >
       <div className="eye"></div>
       <div 
         className="dorsal-fin" 
-        style={{ backgroundColor: getFishColor() }}
+        style={{ backgroundColor: fishColor }}
       ></div>
       <div 
         className="tail" 
-        style={{ borderRightColor: getFishColor() }}
+        style={{ borderRightColor: fishColor }}
       ></div>
       
       {/* Add stripes for striped fish */}

@@ -70,8 +70,7 @@ const Main = () => {
         data-scene={currentScene}
       >
         <div className="page">
-          <About />
-          <BackButton onClick={handleBackToCenter} position="right" />
+          <About onBackClick={handleBackToCenter} />
         </div>
         <div className="page">
           <Aquarium 

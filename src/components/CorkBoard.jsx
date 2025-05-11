@@ -11,7 +11,7 @@ const CorkBoard = ({ onBackClick }) => {
         <div className="cork-board">
           {/* Project sticky note with badges */}
           <StickyNote 
-            color="#FF69B4" 
+            color="#646cff" 
             projectName="Shark Tracker"
             text="Visualization of Great White Sharks off the coast of Guadalupe Island." 
             top="20%" 
@@ -22,25 +22,25 @@ const CorkBoard = ({ onBackClick }) => {
           />
 
           <StickyNote 
-            color="#44bf11" 
-            projectName="USNews Top College Predictor"
+            color="#026937" 
+            projectName="Alma Metrics"
             text="Prediction of top college trends over the near and far future using ML techniques." 
             top="10%" 
             left="40%" 
             rotation={-3}
-            badgeTypes={[]}
-            linkTo="/"
+            badgeTypes={['PYTHON', 'PANDAS', 'MATPLOTLIB', 'NUMPY', 'DATA_VISUALIZATION']}
+            externalLink="https://github.com/yalisommer/Alma-Metrics"
           />
 
           <StickyNote 
-            color="#ff830f" 
-            projectName="SoccerNet Action Spotting"
-            text="Classification of unique soccer actions through 3d CNNs trained on labeled video data."
+            color="#D6010B" 
+            projectName="ViolenceNet"
+            text="3D CNN based Violence detection with automated security and content moderation applications."
             top="60%" 
             left="70%" 
             rotation={3}
-            badgeTypes={[]}
-            externalLink="https://github.com/yalisommer/sn-spotting-cv-final-darpli"
+            badgeTypes={['TENSORFLOW', 'OPENCV', 'DEEP_LEARNING']}
+            externalLink="https://github.com/yalisommer/ViolenceNet-Darpli"
           />
           <div className="cork-texture"></div>
         </div>

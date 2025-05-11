@@ -22,6 +22,8 @@ export const BADGE_TYPES = {
   MATPLOTLIB: { text: 'Matplotlib', color: '#11557C' },
   NUMPY: { text: 'NumPy', color: '#4DABCF' },
   TENSORFLOW: { text: 'TensorFlow', color: '#FF6F00' },
+  OPENCV: { text: 'OpenCV', color: '#5C3EE8' },
+  DEEP_LEARNING: { text: 'Deep Learning', color: '#FF6B6B' },
   
   // Databases
   MONGODB: { text: 'MongoDB', color: '#47A248' },
