@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yalisommer.github.io/aquarium-website",
+  "homepage": "https://yalisommer.github.io/portfoliov3",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
